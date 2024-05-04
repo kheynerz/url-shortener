@@ -31,4 +31,17 @@ input:focus {
     left: 0.7rem;
     z-index: 0; 
     background: rgb(255, 255, 255, 0);
-  }
+}
+
+.input-error > p {
+    color: #c53030;
+}
+
+
+.input-error input {
+    border-color: #c53030;
+}
+
+.input-error label {
+    color: #c53030;
+}

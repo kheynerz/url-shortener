@@ -4,10 +4,11 @@ import 'src/components/Input/input.css'
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label : string
+  error?: string
   onValueChange?: Dispatch<SetStateAction<string>>
 }
 
-const Input = ({label, onValueChange, ...rest} : InputProps) => {
+const Input = ({label, error, onValueChange, ...rest} : InputProps) => {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value
@@ -15,11 +16,12 @@ const Input = ({label, onValueChange, ...rest} : InputProps) => {
   }
 
   return (
-    <div className="input-container">
+    <div className={`input-container${error ? " input-error" : ''}`}>
       <input {...rest} onChange={handleChange}/>
       <label className="input-label">
         {label}
       </label>
+      {error && <p>{error}</p>}
     </div>
   )
 }

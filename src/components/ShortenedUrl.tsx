@@ -1,10 +1,14 @@
 import { URLCard } from "./URLCard"
 
-export const ShortenedUrl = () => {
+interface ShortenedUrlProps {
+  shortUrl: string
+}
+
+export const ShortenedUrl = ({shortUrl} : ShortenedUrlProps) => {
   return (
     <>
       <h2>Shortened URL</h2>
-      <URLCard />
+      <URLCard url={shortUrl}/>
     </>
   )
 }
