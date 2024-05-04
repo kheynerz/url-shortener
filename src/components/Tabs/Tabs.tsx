@@ -5,11 +5,12 @@ import useHash from 'src/hooks/usePathname'
 interface TabProps {
   href: string
   text: string
+  fallback?: boolean
 }
-export const Tab = ({href, text}: TabProps) => {
+export const Tab = ({href, text, fallback = false}: TabProps) => {
   const hash = useHash()
 
-  const isActive = hash.includes(href)
+  const isActive = hash.includes(href) || fallback && hash === ""
 
   return <li className={`tab-item ${isActive ? 'active' : ''}`}>
     <a href={href}>{text}</a>

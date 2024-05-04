@@ -4,7 +4,7 @@ const UrlOverview = () => {
   return (
     <section>
         <Tabs>
-            <Tab href='#top-urls' text={"Top 100 URLs"}/>
+            <Tab href='#top-urls' text={"Top 100 URLs"} fallback/>
             <Tab href='#previous-urls' text={"Previous URLs"}/>
         </Tabs>
     </section>
