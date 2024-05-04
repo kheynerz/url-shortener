@@ -21,13 +21,13 @@ const UrlShortener = () => {
         if (isErrorResponse(response)){
             setError(response['errors'][0])
             return
-        }
+        }   
 
         setShortUrl(`${API_URL}${response.short_code}`)
     }
 
     return (
-        <>
+        <section>
             <Input
                 label="Your full URL"
                 placeholder="https://example.com/very-long-url"
@@ -36,7 +36,7 @@ const UrlShortener = () => {
             />
             <Button onClick={handleClick}>Shorten URL</Button>
             <ShortenedUrl shortUrl={shortUrl}/>
-        </>
+        </section>
       
     );
 }

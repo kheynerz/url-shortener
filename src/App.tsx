@@ -1,6 +1,7 @@
 import './App.css'
 import Header from 'src/components/Header'
-import UrlShortener from './components/UrlShortener'
+import UrlShortener from 'src/components/UrlShortener'
+import UrlOverview from 'src/components/UrlOverview'
 
 const App = () => {
   return (
@@ -8,6 +9,7 @@ const App = () => {
       <Header/>
       <main>
         <UrlShortener/>
+        <UrlOverview/>
       </main>
     </>
   )
