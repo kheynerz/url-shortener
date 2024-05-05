@@ -1,0 +1,1 @@
+export const SAVED_URLS_KEY = "saved_urls"
