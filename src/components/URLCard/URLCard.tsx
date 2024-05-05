@@ -2,10 +2,11 @@ import 'src/components/URLCard/URLCard.css'
 import Copy from 'src/components/Icons/Copy'
 
 interface URLCardProps {
-  url?: string
+  title?: string
+  url: string
 }
 
-const URLCard = ({url}: URLCardProps) => {
+const URLCard = ({ title, url }: URLCardProps) => {
 
   const handleClick = () => {
     if (!url) return
@@ -14,7 +15,7 @@ const URLCard = ({url}: URLCardProps) => {
 
   return (
     <article className="card">
-      <p>{url ?? "The URL will be placed here"}</p>
+      <p>{title ?? url ?? "The URL will be placed here"}</p>
       {url && <Copy onClick={handleClick} cursor={"pointer"}/>}
     </article>
   )

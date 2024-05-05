@@ -1,7 +1,7 @@
 export interface ShortUrl {
     id:             number;
     full_url:       string;
-    title:          null;
+    title:          string;
     click_count:    number;
     created_at:     Date;
     updated_at:     Date;
@@ -13,3 +13,6 @@ export interface ErrorResponse {
     errors:   string[];
     full_url: string[];
 }
+
+
+export type Url = Omit<ShortUrl, 'created_at' | 'updated_at' | 'short_url_code'>

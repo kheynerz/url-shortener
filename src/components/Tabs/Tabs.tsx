@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import 'src/components/Tabs/tabs.css'
-import useHash from 'src/hooks/usePathname'
+import useHash from 'src/hooks/useHash'
 
 interface TabProps {
   href: string
