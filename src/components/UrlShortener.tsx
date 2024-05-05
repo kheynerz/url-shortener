@@ -8,7 +8,8 @@ import useLocalStorage from "src/hooks/useLocalStorage";
 import { createShortUrl } from "src/services/createShortUrl";
 import { ErrorResponse, ShortUrl, Url } from "src/types/shortUrl";
 
-const isErrorResponse = (response: ShortUrl | ErrorResponse): response is ErrorResponse => 'errors' in response;
+
+const isErrorResponse = (response: ShortUrl | ErrorResponse): response is ErrorResponse => 'errors' in response || response.full_url[0] === "can't be blank";
 
 const API_URL = import.meta.env.VITE_API_URL
 
@@ -18,7 +19,6 @@ const UrlShortener = () => {
 
     const [shortUrl, setShortUrl] = useState<string>("")
     const [error, setError] = useState("")
-
 
     const saveUrl = (url : ShortUrl) => {
         const urls = JSON.parse(localStorageUrls ?? "[]") as Url[]
@@ -30,7 +30,8 @@ const UrlShortener = () => {
         setError("")
         const response = await createShortUrl(fullUrl.value)
         if (isErrorResponse(response)){
-            setError(response['errors'][0])
+            const err = response['errors'] ? response['errors'][0] : "Full url can't be blank"
+            setError(err)
             return
         }   
 

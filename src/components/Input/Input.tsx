@@ -21,7 +21,7 @@ const Input = ({label, error, onValueChange, ...rest} : InputProps) => {
       <label className="input-label">
         {label}
       </label>
-      {error && <p>{error}</p>}
+      <p>{error}</p>
     </div>
   )
 }

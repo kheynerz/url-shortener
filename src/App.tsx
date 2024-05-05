@@ -1,7 +1,7 @@
 import './App.css'
-import Header from 'src/components/Header'
 import UrlShortener from 'src/components/UrlShortener'
 import UrlOverview from 'src/components/UrlOverview'
+import { Header } from './components/Header'
 
 const App = () => {
   return (

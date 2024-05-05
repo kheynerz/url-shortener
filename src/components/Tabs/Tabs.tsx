@@ -26,7 +26,6 @@ export const Tabs = ({children} : TabsProps) => {
     <div className="tabs-container">
         <ul className='tabs-list'>
           {children}
-          
         </ul>
     </div>  
     )

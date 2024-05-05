@@ -16,7 +16,7 @@ const UrlOverview = () => {
           </Tabs>
       </section>
       <section>
-        {hash === routes.TOP_URLS && <TopUrls/>}
+        {(hash === routes.TOP_URLS || !hash) && <TopUrls/>}
         {hash === routes.PREVIOUS_URL && <PreviousUrls/>}
       </section>
     </>

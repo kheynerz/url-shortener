@@ -1,0 +1,16 @@
+.svg-container {
+    background-color: black;
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.svg-container:hover {
+    background-color: #213547;
+}
+
+.svg {
+    min-width: 16px;
+    min-height: 16px;
+    color: #fff;
+}
